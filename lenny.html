@@ -6,63 +6,100 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Lenny</title>
     <style>
-        body{
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-            background: #f4f4f4;
-            color: #333;
-            text-align: center;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;    
-        }
-        header {
-            background: #182219;
-            color: white;
-            padding: 10px 0;
-            text-align: center;
-            font-size: 24px;
-            font-weight: bold;
-        }
-        h1 {
-            font-size: 36px;
-            margin-bottom: 20px;
-        }
-        p {
-            font-size: 18px;
-            margin-bottom: 20px;
-        }
-        a {
-            color: #333;
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-        button{
-            background: #182219;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px;
-            font-weight: bold;
-        }
-        button:hover {
-            background: #333;
-
-        }
-        #msg{
-            margin-top: 20px;
-            font-size: 18px;
-            color: green;
-        }
-    </style>
+body {
+margin: 0;
+font-family: Arial, sans-serif;
+background: #f4f4f4;
+color: #333;
+}
+header {
+background: #0d6efd;
+padding: 20px;
+text-align: center;
+color: white;
+}
+.container {
+max-width: 900px;
+margin: 40px auto;
+padding: 20px;
+background: white;
+border-radius: 12px;
+box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+h1, h2 {
+margin-bottom: 10px;
+}
+p {
+line-height: 1.6;
+}
+button {
+background: #0d6efd;
+color: white;
+border: none;
+padding: 12px 18px;
+border-radius: 6px;
+cursor: pointer;
+margin-top: 20px;
+font-size: 15px;
+}
+button:hover {
+background: #0b5ed7;
+}
+#msg {
+margin-top: 15px;
+padding: 10px;
+background: #e7f1ff;
+border-left: 4px solid #0d6efd;
+display: none;
+}
+.contact p {
+margin: 5px 0;
+}
+.contact a {
+color: #0d6efd;
+text-decoration: none;
+}
+.contact a:hover {
+text-decoration: underline;
+}
+</style>    </style>
 </head>
 <body>
-    <h1>hello</h1>
+    <header>
+        <h1>About Lenny</h1>
+    </header>
+
+    <div class="container">
+        <h2>Hello, I'm Lenny 👋</h2>
+        <p>
+            I am a Business Information Technology student with a passion for building
+            modern, responsive web applications. I love working with spring-boot, React,
+            and other technologies to bring ideas to life. I enjoy learning new skills
+            and turning them into real projects.
+        </p>
+        <p>
+            My interests include software development, data science, finance-related
+            tech solutions, and building systems that solve real problems—especially in the
+            Tanzanian context.
+        </p>
+        
+
+<h2>Contact Details</h2>
+<div class="contact">
+<p>Email: <a href="mailto:lennysilvanus@gmail.com">lennysilvanus@gmail.com</a></p>
+<p>Phone: <a href="tel:+255 743 801 949">+255 743 801 949</a></p>
+<p>Location: Dar es Salaam, Tanzania</p>
+</div>
+
+<button onclick="showMessage()">Click Me</button>
+<div id="msg">Thanks for visiting my About page! 🎉</div>
+    </div>
+    <script>
+function showMessage() {
+const box = document.getElementById("msg");
+box.style.display = "block";
+}
+</script>
+
 </body>
 </html>
