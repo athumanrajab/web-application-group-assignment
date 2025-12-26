@@ -80,6 +80,39 @@ font-weight: bold;
 footer a:hover {
 text-decoration: underline;
 }
+.section {
+margin: 30px 0;
+padding: 20px;
+background: #e9f0ff;
+border-radius: 12px;
+transition: transform 0.3s;
+}
+.section:hover {
+transform: scale(1.02);
+}
+.section h3 {
+margin-top: 0;
+color: #0d6efd;
+}
+.skills, .hobbies {
+display: flex;
+flex-wrap: wrap;
+gap: 15px;
+}
+.skills div, .hobbies div {
+background: white;
+padding: 10px 15px;
+border-radius: 8px;
+box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+display: flex;
+align-items: center;
+gap: 10px;
+}
+.skills img, .hobbies img {
+width: 30px;
+height: 30px;
+border-radius: 50%;
+}
 </style>    
 </head>
 <body>
@@ -100,18 +133,45 @@ text-decoration: underline;
             tech solutions, and building systems that solve real problems—especially in the
             Tanzanian context.
         </p>
+    </div>
+    <div class="container">
+        <div class="section">
+            <h3>Skills</h3>
+            <div class="skills">
+            <div><img src="https://img.icons8.com/color/48/python.png" alt="Python"/>Python</div>
+            <div><img src="https://img.icons8.com/color/48/html-5.png" alt="HTML"/>HTML & CSS</div>
+            <div><img src="https://img.icons8.com/color/48/javascript.png" alt="JS"/>JavaScript</div>
+            <div><img src="https://img.icons8.com/color/48/sql.png" alt="SQL"/>SQL & Databases</div>
+            <div><img src="https://img.icons8.com/color/48/data-configuration.png" alt="Data"/>Data Analysis</div>
+        </div>
+    </div>
+</div>    
         
+<div class="container">
+     <div class="section">
+        <h3>Hobbies</h3>
+        <div class="hobbies">
+            <div><img src="https://img.icons8.com/color/48/code.png" alt="Coding"/>Coding Projects</div>
+            <div><img src="https://img.icons8.com/color/48/book.png" alt="Reading"/>Reading Tech Articles</div>
+            <div><img src="https://img.icons8.com/color/48/video-game.png" alt="Gaming"/>Gaming</div>
+            <div><img src="https://img.icons8.com/color/48/money.png" alt="Finance"/>Finance & Investing</div>
 
-<h2>Contact Details</h2>
-<div class="contact">
-<p>Email: <a href="mailto:lennysilvanus@gmail.com">lennysilvanus@gmail.com</a></p>
-<p>Phone: <a href="tel:+255 743 801 949">+255 743 801 949</a></p>
-<p>Location: Dar es Salaam, Tanzania</p>
+        </div>
+    </div>
+    
 </div>
 
-<button onclick="showMessage()">Click Me</button>
-<div id="msg">Thanks for visiting my About page! 🎉</div>
+<div class="container">
+    <div class="section">
+        <h3>Contact Details</h3>
+        <div class="contact">
+        <p>Email: <a href="mailto:lennysilvanus@gmail.com">lennysilvanus@gmail.com</a></p>
+        <p>Phone: <a href="tel:+255 743 801 949">+255 743 801 949</a></p>
+        <p>Location: Dar es Salaam, Tanzania</p>
+        </div>
     </div>
+</div>
+
 <footer>
 <p>Connect with me:</p>
 <a href="https://github.com/lennysilvus" target="_blank">GitHub</a> |
@@ -119,12 +179,7 @@ text-decoration: underline;
 <a href="https://twitter.com/lennysilvanus" target="_blank">Twitter</a>
 <p>&copy; 2025 Lenny. All rights reserved.</p>
 </footer>    
-    <script>
-function showMessage() {
-const box = document.getElementById("msg");
-box.style.display = "block";
-}
-</script>
+    
 
 </body>
 </html>
