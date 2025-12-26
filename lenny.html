@@ -62,7 +62,25 @@ text-decoration: none;
 .contact a:hover {
 text-decoration: underline;
 }
-</style>    </style>
+footer {
+background: #0d6efd;
+color: white;
+text-align: center;
+padding: 20px 10px;
+margin-top: 20px;
+border-top-left-radius: 12px;
+border-top-right-radius: 12px;
+}
+footer a {
+color: white;
+margin: 0 10px;
+text-decoration: none;
+font-weight: bold;
+}
+footer a:hover {
+text-decoration: underline;
+}
+</style>    
 </head>
 <body>
     <header>
@@ -94,6 +112,13 @@ text-decoration: underline;
 <button onclick="showMessage()">Click Me</button>
 <div id="msg">Thanks for visiting my About page! 🎉</div>
     </div>
+<footer>
+<p>Connect with me:</p>
+<a href="https://github.com/lennysilvus" target="_blank">GitHub</a> |
+<a href="https://linkedin.com/in/lennysilvanus" target="_blank">LinkedIn</a> |
+<a href="https://twitter.com/lennysilvanus" target="_blank">Twitter</a>
+<p>&copy; 2025 Lenny. All rights reserved.</p>
+</footer>    
     <script>
 function showMessage() {
 const box = document.getElementById("msg");
