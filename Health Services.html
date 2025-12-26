@@ -99,6 +99,77 @@
         .emergency-list a:hover {
             background: #cce5ff;
         }
+        .modal {
+            display: none; 
+            position: fixed; 
+            z-index: 1000; 
+            left: 0;
+            top: 0;
+            width: 100%; 
+            height: 100%; 
+            overflow: auto; 
+            background-color: rgba(0,0,0,0.5);
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-content {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            max-width: 50%;
+            max-height: 50%;
+            overflow: auto;
+            text-align: center;
+            transform: scale(0.8);
+            transition: transform 0.3s ease;
+        }
+        .modal-content:hover {
+            transform: scale(1);
+        }
+        .modal.active .modal-content {
+            transform: scale(1);
+        }
+        .modal-content img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+        .modal-content p {
+            margin: 10px 0;
+            font-size: 18px;
+        }
+        .modal-content .name {
+            font-weight: bold;
+            font-size: 24px;
+        }
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #fff;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        /* Responsive adjustments */
+        @media screen and (max-width: 768px) {
+            .carousel-item {
+                min-width: 33.33%; /* 3 items */
+            }
+            .modal-content {
+                max-width: 70%;
+                max-height: 70%;
+            }
+        }
+        @media screen and (max-width: 480px) {
+            .carousel-item {
+                min-width: 100%; /* 1 item */
+            }
+            .modal-content {
+                max-width: 90%;
+                max-height: 90%;
+            }
+        }
 
 
     </style>
@@ -355,3 +426,113 @@
         <span class="close" onclick="closeModal()">&times;</span>
         <div class="modal-content" id="modal-content"></div>
     </div>
+
+    <script>
+        let positions = {};
+        let intervals = {};
+
+        function slide(id, dir) {
+            const carousel = document.getElementById(`${id}-carousel`);
+            const inner = carousel.querySelector('.carousel-inner');
+            if (!inner.children.length) return;
+            const itemWidth = inner.children[0].offsetWidth;
+            const carouselWidth = carousel.offsetWidth;
+            const numVisible = Math.floor(carouselWidth / itemWidth) || 1;
+            const originalLength = inner.children.length / 2;
+            const minPos = -(inner.children.length - numVisible);
+            positions[id] = (positions[id] || 0) + dir;
+            if (positions[id] > 0) positions[id] = 0;
+            if (positions[id] < minPos) positions[id] = minPos;
+            inner.style.transform = `translateX(${positions[id] * itemWidth}px)`;
+            // Check for reset after transition
+            if (positions[id] === -originalLength) {
+                const reset = () => {
+                    inner.style.transition = 'none';
+                    positions[id] = 0;
+                    inner.style.transform = `translateX(0px)`;
+                    setTimeout(() => {
+                        inner.style.transition = 'transform 0.5s ease-in-out';
+                    }, 0);
+                    inner.removeEventListener('transitionend', reset);
+                };
+                inner.addEventListener('transitionend', reset);
+            }
+        }
+
+        function makeInfinite(id) {
+            const inner = document.getElementById(`${id}-carousel`).querySelector('.carousel-inner');
+            const items = Array.from(inner.children);
+            items.forEach(item => inner.appendChild(item.cloneNode(true)));
+        }
+
+        function startAutoSlide(id, ms = 3000) {
+            const carousel = document.getElementById(`${id}-carousel`);
+            intervals[id] = setInterval(() => slide(id, -1), ms);
+            carousel.addEventListener('mouseenter', () => clearInterval(intervals[id]));
+            carousel.addEventListener('mouseleave', () => intervals[id] = setInterval(() => slide(id, -1), ms));
+        }
+
+        function openModal(content) {
+            const modal = document.getElementById('modal');
+            const modalContent = document.getElementById('modal-content');
+            modalContent.innerHTML = content;
+            modal.style.display = 'flex';
+            setTimeout(() => modal.classList.add('active'), 10);
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('modal');
+            modal.classList.remove('active');
+            setTimeout(() => {
+                modal.style.display = 'none';
+                document.getElementById('modal-content').innerHTML = '';
+            }, 300);
+        }
+
+        // Click outside to close
+        window.onclick = function(event) {
+            const modal = document.getElementById('modal');
+            if (event.target === modal) {
+                closeModal();
+            }
+        }
+
+        // Add click listeners to items
+        function addClickListeners(id) {
+            const items = document.querySelectorAll(`#${id}-carousel .carousel-item`);
+            items.forEach(item => {
+                item.addEventListener('click', () => {
+                    const cloned = item.cloneNode(true);
+                    // Remove hover effects in modal
+                    cloned.style.transition = 'none';
+                    cloned.style.cursor = 'default';
+                    cloned.style.boxShadow = 'none';
+                    // Enlarge text sizes
+                    cloned.querySelectorAll('p').forEach(p => {
+                        p.style.fontSize = '18px';
+                    });
+                    if (cloned.querySelector('.name')) {
+                        cloned.querySelector('.name').style.fontSize = '24px';
+                    }
+                    // Show extra details if applicable
+                    const extra = cloned.querySelector('.extra-details');
+                    if (extra) {
+                        extra.style.display = 'block';
+                    }
+                    openModal(cloned.innerHTML);
+                });
+            });
+        }
+        // Initialize
+        makeInfinite('hospital');
+        makeInfinite('pharmacy');
+        makeInfinite('tips');
+        startAutoSlide('hospital');
+        startAutoSlide('pharmacy');
+        startAutoSlide('tips');
+        addClickListeners('hospital');
+        addClickListeners('pharmacy');
+        addClickListeners('tips');
+    </script>
+</body>
+</html>
