@@ -9,11 +9,12 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            background-color: #FAF3E1;
+            color: #222222;
         }
 
         header {
-            background-color: #DC143C;
+            background-color: #FF6D1F;
             color: white;
             padding: 20px;
             text-align: center;
@@ -24,7 +25,7 @@
         }
 
         nav {
-            background-color: #B22222;
+            background-color: #FF8B4A;
             padding: 10px;
             text-align: center;
         }
@@ -39,29 +40,29 @@
         }
 
         nav a:hover {
-            background-color: #DC143C;
+            background-color: #FF6D1F;
         }
 
         .container {
             max-width: 1000px;
             margin: 20px auto;
             padding: 20px;
-            background-color: white;
+            background-color: #F5E7C6;
             border-radius: 5px;
         }
 
         h2 {
-            color: #DC143C;
-            border-bottom: 3px solid #FF6347;
+            color: #FF6D1F;
+            border-bottom: 3px solid #FF8B4A;
             padding-bottom: 10px;
         }
 
         h3 {
-            color: #B22222;
+            color: #FF6D1F;
         }
 
         .emergency-banner {
-            background-color: #DC143C;
+            background-color: #FF6D1F;
             color: white;
             padding: 20px;
             border-radius: 8px;
@@ -79,7 +80,7 @@
         }
 
         .service {
-            border: 2px solid #FF6347;
+            border: 2px solid #FF8B4A;
             padding: 15px;
             text-align: center;
             border-radius: 8px;
@@ -89,7 +90,7 @@
 
         .service:hover {
             transform: translateY(-5px);
-            box-shadow: 0 4px 8px rgba(220, 20, 60, 0.3);
+            box-shadow: 0 4px 8px rgba(255, 109, 31, 0.3);
         }
 
         .service h3 {
@@ -98,7 +99,7 @@
         }
 
         .phone-number {
-            color: #DC143C;
+            color: #FF6D1F;
             font-weight: bold;
             font-size: 18px;
             margin: 15px 0;
@@ -115,7 +116,7 @@
         }
 
         button {
-            background-color: #DC143C;
+            background-color: #FF6D1F;
             color: white;
             padding: 10px 20px;
             border: none;
@@ -126,7 +127,7 @@
         }
 
         button:hover {
-            background-color: #B22222;
+            background-color: #FF8B4A;
         }
 
         .emergency-info {
@@ -134,7 +135,7 @@
             padding: 20px;
             border-radius: 5px;
             margin: 20px 0;
-            border-left: 4px solid #DC143C;
+            border-left: 4px solid #FF6D1F;
         }
 
         .emergency-info ul {
@@ -157,12 +158,12 @@
             padding: 15px;
             margin: 10px 0;
             background-color: white;
-            border-left: 4px solid #FF6347;
+            border-left: 4px solid #FF8B4A;
             border-radius: 4px;
         }
 
         .station-name {
-            color: #DC143C;
+            color: #FF6D1F;
             font-weight: bold;
             font-size: 16px;
             margin-bottom: 8px;
@@ -179,7 +180,7 @@
             padding: 20px;
             border-radius: 5px;
             margin: 20px 0;
-            border: 2px solid #FF6347;
+            border: 2px solid #FF8B4A;
         }
 
         .tips-section ul {
@@ -196,7 +197,7 @@
             padding: 20px;
             border-radius: 5px;
             margin-top: 30px;
-            border: 2px solid #DC143C;
+            border: 2px solid #FF6D1F;
         }
 
         .contact-info {
@@ -208,8 +209,24 @@
             background-color: #333;
             color: white;
             text-align: center;
-            padding: 15px;
+            padding: 20px;
             margin-top: 30px;
+        }
+
+        .back-button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 25px;
+            background-color: #FF6D1F;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+            font-weight: bold;
+        }
+
+        .back-button:hover {
+            background-color: #FF8B4A;
         }
 
         @media (max-width: 768px) {
@@ -232,188 +249,87 @@
 
     <div class="container">
         <div class="emergency-banner">
-            🆘 EMERGENCY HOTLINE: 112 or 999 - CALL IMMEDIATELY IN CASE OF EMERGENCY
+            🆘 EMERGENCY HOTLINE: 112 or 999
         </div>
 
-        <h2>🚔 Police & Security Services</h2>
+        <h2>📞 Emergency Numbers</h2>
+        <div class="emergency-info">
+            <ul>
+                <li><strong>Police Emergency:</strong> 112 or 999</li>
+                <li><strong>Fire Emergency:</strong> 112 or 999</li>
+                <li><strong>Medical/Ambulance:</strong> 112 or 999</li>
+                <li><strong>Poison Control:</strong> +255 22 215 0631</li>
+                <li><strong>Police Non-Emergency:</strong> +255 22 213 3555</li>
+            </ul>
+        </div>
+
+        <h2>🚔 Police Services</h2>
         <div class="services">
             <div class="service">
-                <h3>🚔 Police Headquarters Dar es Salaam</h3>
+                <h3>Dar es Salaam</h3>
                 <div class="phone-number">+255 22 213 3555</div>
-                <div class="description">
-                    Police headquarters in Dar es Salaam handling general inquiries and crime reports.
-                </div>
-                <button>Get Directions</button>
+                <p>Main police headquarters</p>
             </div>
-
             <div class="service">
-                <h3>📍 Arusha Police Station</h3>
+                <h3>Arusha</h3>
                 <div class="phone-number">+255 27 250 4844</div>
-                <div class="description">
-                    Police station in Arusha serving the northern region with community policing programs.
-                </div>
-                <button>Get Directions</button>
+                <p>Northern region station</p>
             </div>
-
             <div class="service">
-                <h3>📍 Mbeya Police Station</h3>
+                <h3>Mbeya</h3>
                 <div class="phone-number">+255 25 260 2333</div>
-                <div class="description">
-                    Police department in Mbeya handling public safety in the southern highlands region.
-                </div>
-                <button>Get Directions</button>
+                <p>Southern region station</p>
             </div>
         </div>
 
-        <h2>🚒 Fire & Rescue Services</h2>
+        <h2>🚒 Fire & Rescue</h2>
         <div class="services">
             <div class="service">
-                <h3>🚒 Fire & Rescue Services HQ</h3>
+                <h3>Fire HQ</h3>
                 <div class="phone-number">+255 22 211 2929</div>
-                <div class="description">
-                    Main fire station in Dar es Salaam with emergency response teams for rescue operations.
-                </div>
-                <button>Get Directions</button>
+                <p>Dar es Salaam station</p>
             </div>
-
             <div class="service">
-                <h3>🚒 Dodoma Fire Station</h3>
+                <h3>Dodoma</h3>
                 <div class="phone-number">+255 26 232 1234</div>
-                <div class="description">
-                    Fire station in Dodoma with rapid response capability and fire prevention services.
-                </div>
-                <button>Get Directions</button>
+                <p>Central region</p>
             </div>
-
             <div class="service">
-                <h3>💨 Zanzibar Emergency Response</h3>
+                <h3>Zanzibar</h3>
                 <div class="phone-number">+255 24 223 1111</div>
-                <div class="description">
-                    Emergency response team in Zanzibar for fire, rescue, and maritime emergencies.
-                </div>
-                <button>Get Directions</button>
+                <p>Island emergency team</p>
             </div>
         </div>
 
-        <h2>📞 Emergency Contact Numbers</h2>
-        <div class="emergency-info">
-            <ul>
-                <li><strong>🚨 Police Emergency:</strong> 112 or 999</li>
-                <li><strong>🚒 Fire Emergency:</strong> 112 or 999</li>
-                <li><strong>🏥 Medical Emergency/Ambulance:</strong> 112 or 999</li>
-                <li><strong>☠️ Poison Control:</strong> +255 22 215 0631</li>
-                <li><strong>👩‍⚕️ Mental Health Crisis:</strong> +255 22 212 9851</li>
-                <li><strong>🐾 Tanzania Wildlife Authority:</strong> +255 27 250 7671</li>
-                <li><strong>📞 Police Non-Emergency (Dar):</strong> +255 22 213 3555</li>
-                <li><strong>🌊 Tanzania Coast Guard:</strong> +255 22 213 2500</li>
-            </ul>
-        </div>
-
-        <h2>🏢 Police Stations & Details</h2>
-        <div class="stations">
-            <div class="station">
-                <div class="station-name">🏢 Police Headquarters Dar es Salaam</div>
-                <div class="station-details">
-                    <p><strong>Address:</strong> Kisutu Street, City Center, Dar es Salaam</p>
-                    <p><strong>Phone:</strong> +255 22 213 3555</p>
-                    <p><strong>Hours:</strong> 24/7 - Open All Days</p>
-                    <p><strong>Services:</strong> Crime Reports, Permits, Passport Verification, Criminal Records</p>
-                </div>
-            </div>
-
-            <div class="station">
-                <div class="station-name">🏢 Arusha Police Station</div>
-                <div class="station-details">
-                    <p><strong>Address:</strong> Bumbuli Road, Arusha, Northern Tanzania</p>
-                    <p><strong>Phone:</strong> +255 27 250 4844</p>
-                    <p><strong>Hours:</strong> 24/7 - Open All Days</p>
-                    <p><strong>Services:</strong> Community Policing, Tourism Safety, Traffic Control</p>
-                </div>
-            </div>
-
-            <div class="station">
-                <div class="station-name">🏢 Mbeya Police Station</div>
-                <div class="station-details">
-                    <p><strong>Address:</strong> Uhuru Street, Mbeya, Southern Tanzania</p>
-                    <p><strong>Phone:</strong> +255 25 260 2333</p>
-                    <p><strong>Hours:</strong> 24/7 - Open All Days</p>
-                    <p><strong>Services:</strong> Border Security, Highway Patrol, Community Safety</p>
-                </div>
-            </div>
-
-            <div class="station">
-                <div class="station-name">🚒 Fire & Rescue Services Dar es Salaam</div>
-                <div class="station-details">
-                    <p><strong>Address:</strong> Samora Avenue, Dar es Salaam</p>
-                    <p><strong>Phone:</strong> +255 22 211 2929</p>
-                    <p><strong>Hours:</strong> 24/7 - Open All Days</p>
-                    <p><strong>Services:</strong> Emergency Response, Fire Prevention, Rescue Operations, Safety Training</p>
-                </div>
-            </div>
-        </div>
-
-        <h2>🆘 Safety Tips & Emergency Preparedness</h2>
+        <h2>🆘 Safety Tips</h2>
         <div class="tips-section">
-            <h3>When Calling Emergency Services</h3>
+            <h3>During Emergency:</h3>
             <ul>
-                <li>✓ Remain calm and provide clear information about your location</li>
-                <li>✓ Describe the emergency situation accurately</li>
-                <li>✓ Follow instructions from the dispatcher</li>
-                <li>✓ Do not hang up until instructed to do so</li>
-                <li>✓ Have your address and phone number ready</li>
+                <li>✓ Stay calm and clear</li>
+                <li>✓ Provide your location</li>
+                <li>✓ Follow dispatcher instructions</li>
+                <li>✓ Keep emergency numbers ready</li>
             </ul>
 
-            <h3>Home Safety Tips</h3>
+            <h3>Home Safety:</h3>
             <ul>
-                <li>✓ Install working smoke detectors on every level of your home</li>
-                <li>✓ Keep fire extinguishers in accessible locations</li>
-                <li>✓ Plan and practice a home fire escape route</li>
-                <li>✓ Lock doors and windows when away from home</li>
-                <li>✓ Don't hide keys outside where intruders can find them</li>
-                <li>✓ Install outdoor lighting around your property</li>
+                <li>✓ Install smoke detectors</li>
+                <li>✓ Keep fire extinguishers accessible</li>
+                <li>✓ Lock doors and windows</li>
+                <li>✓ Plan escape routes</li>
             </ul>
 
-            <h3>Personal Safety Tips</h3>
+            <h3>Personal Safety:</h3>
             <ul>
-                <li>✓ Be aware of your surroundings</li>
-                <li>✓ Travel in groups when possible</li>
-                <li>✓ Trust your instincts</li>
-                <li>✓ Keep valuables out of sight</li>
-                <li>✓ Report suspicious activity to police</li>
-                <li>✓ Keep emergency numbers readily available</li>
-            </ul>
-
-            <h3>Natural Disaster Preparedness</h3>
-            <ul>
-                <li>✓ Create an emergency kit with water, food, and first aid supplies</li>
-                <li>✓ Know the safest routes for evacuation from your area</li>
-                <li>✓ Stay informed through local news and emergency alerts</li>
-                <li>✓ Help elderly neighbors prepare for emergencies</li>
-                <li>✓ Keep important documents in a waterproof container</li>
+                <li>✓ Be aware of surroundings</li>
+                <li>✓ Travel in groups</li>
+                <li>✓ Report suspicious activity</li>
+                <li>✓ Keep valuables secure</li>
             </ul>
         </div>
 
-        <h2>📋 Community Safety Programs</h2>
-        <div class="emergency-info">
-            <ul>
-                <li>🎓 <strong>Community Police Academy</strong> - Learn about law enforcement procedures</li>
-                <li>🚗 <strong>Neighborhood Watch Programs</strong> - Community-based crime prevention</li>
-                <li>👧 <strong>Youth Safety Programs</strong> - Education for young people about personal safety</li>
-                <li>🏠 <strong>Home Security Assessments</strong> - Free home safety evaluations</li>
-                <li>📱 <strong>Alert System Registration</strong> - Receive emergency alerts on your phone</li>
-                <li>🚔 <strong>Safety Escort Services</strong> - Walking companions for personal security</li>
-            </ul>
-        </div>
-
-        <div class="contact-section">
-            <h2>Contact Emergency Services in Tanzania</h2>
-            <div class="contact-info">
-                <p><strong>🚨 Life-Threatening Emergency:</strong> Call 112 or 999 Immediately</p>
-                <p><strong>Non-Emergency Police (Dar es Salaam):</strong> +255 22 213 3555</p>
-                <p><strong>Tanzania Police Force Website:</strong> www.tanzaniapolice.go.tz</p>
-                <p><strong>Crime Reporting Online:</strong> www.tanzaniacrime.go.tz</p>
-                <p><strong>Anonymous Tip Line:</strong> +255 756 123 456</p>
-            </div>
+        <div style="text-align: center; margin-top: 40px;">
+            <a href="index.html" class="back-button">← Back to Home</a>
         </div>
     </div>
 
