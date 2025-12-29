@@ -171,10 +171,66 @@
             }
         }
 
+        /* ================= Header Styles ================= */
+        header {
+            background-color: #1b5e20;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        /* ================= Navigation ================= */
+        nav {
+            margin-top: 10px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 6px;
+            padding: 6px 10px;
+            font-weight: 600;
+            border-radius: 4px;
+        }
+
+        nav a:hover,
+        nav a.active {
+            background-color: #4caf50;
+        }
+
+        /* ================= Footer Styles ================= */
+        footer {
+            background-color: #1b5e20;
+            color: white;
+            text-align: center;
+            padding: 12px;
+            margin-top: 40px;
+            font-size: 14px;
+        }
 
     </style>
 </head>
 <body>
+    <header>
+        <h1>Community Information & Services Portal</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="health.html">Health</a>
+            <a href="education.html">Education</a>
+            <a href="security.html">Security</a>
+            <a href="jobs.html">Jobs</a>
+            <a href="business.html">Businesses</a>
+            <a href="events.html">Events</a>
+            <a href="tourism.html">Tourism</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
     <h1> Health Services in Dar es salaam</h1>
 
     <div class ="section">
@@ -596,5 +652,9 @@
             addClickListeners('tips');
         });
     </script>
+
+    <footer>
+        <p>&copy; 2025 CIS Portal | Dar es Salaam</p>
+    </footer>
 </body>
 </html>
