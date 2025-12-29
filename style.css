@@ -1,93 +1,83 @@
-/* Reset & Base Styles */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
-
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: #FAF3E1;
-    color: #222222;
-    line-height: 1.6;
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background-color: #f2f5f7;
+  color: #333;
+  line-height: 1.6;
 }
 
-/* Container */
-.container {
-    width: 90%;
-    max-width: 1000px;
-    margin: auto;
+/* ================= Header ================= */
+header {
+  background-color: #1b5e20;
+  color: white;
+  padding: 20px;
+  text-align: center;
 }
+header h1 {
+  margin: 0;
+} 
 
-/* Navbar */
-.navbar {
-    background-color: #FF6D1F;
-    padding: 15px 0;
+/* ================= Navigation ================= */
+nav {
+  margin-top: 10px;
 }
-
-.navbar-brand {
-    color: #ffffff;
-    font-size: 24px;
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 6px;
+  padding: 6px 10px;
+  font-weight: 600;
+  border-radius: 4px;
 }
+nav a:hover,
+nav a.active {
+  background-color: #4caf50;
+} 
 
-/* Main Content */
-.main-content {
-    margin-top: 40px;
+/* ================= Main Content ================= */
+main {
+  max-width: 1100px;
+  margin: 30px auto;
+  padding: 25px;
+  background-color: white;
+  border-radius: 8px;
 }
-
-/* Card */
-.card {
-    background-color: #F5E7C6;
-    padding: 30px;
-    border-radius: 6px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+h2 {
+  color: #1b5e20;
+  margin-top: 0;
 }
+h3 {
+  color: #2e7d32;
+  margin-top: 20px;
+} 
 
-/* Titles */
-.title {
-    text-align: center;
-    margin-bottom: 10px;
-}
+/* ================= Sections ================= */
+section {
+  margin-top: 20px;
+} 
 
-.subtitle {
-    text-align: center;
-    color: #666;
-    margin-bottom: 20px;
-}
+/* ================= Footer ================= */
+footer {
+  background-color: #1b5e20;
+  color: white;
+  text-align: center;
+  padding: 12px;
+  margin-top: 40px;
+  font-size: 14px;
+} 
 
-/* Divider */
-hr {
-    margin: 20px 0;
-}
-
-/* Member List */
-.member-list {
-    list-style: none;
-    margin-top: 15px;
-}
-
-.member-list li {
-    margin-bottom: 10px;
-}
-
-.member-list a {
-    display: block;
-    padding: 12px;
-    background-color: #f1f1f1;
-    color: #222222;
-    text-decoration: none;
-    border-radius: 4px;
-    transition: background-color 0.3s;
-}
-
-.member-list a:hover {
-    background-color: #FF8B4A;
-}
-
-/* Footer */
-.footer {
-    text-align: center;
-    margin-top: 50px;
-    padding: 20px 0;
-    color: #777;
+/* ================= Responsive ================= */
+@media (max-width: 768px) {
+  nav a {
+    display: inline-block;
+    margin: 5px;
+    font-size: 14px;
+  }
+  main {
+    margin: 15px;
+    padding: 20px;
+  }
 }
